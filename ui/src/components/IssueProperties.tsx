@@ -23,6 +23,7 @@ import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover
 import { User, Hexagon, ArrowUpRight, Tag, Plus, Trash2, Copy, Check } from "lucide-react";
 import { AgentIcon } from "./AgentIconPicker";
 
+import { useTranslation } from "react-i18next";
 const EXECUTION_WORKSPACE_OPTIONS = [
   { value: "shared_workspace", label: "Project default" },
   { value: "isolated_workspace", label: "New isolated workspace" },
@@ -174,6 +175,7 @@ function CopyableValue({ value, label, mono, className }: { value: string; label
 }
 
 export function IssueProperties({ issue, onUpdate, inline }: IssuePropertiesProps) {
+  const { t } = useTranslation();
   const { selectedCompanyId } = useCompany();
   const queryClient = useQueryClient();
   const companyId = issue.companyId ?? selectedCompanyId;

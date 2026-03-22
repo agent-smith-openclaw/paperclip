@@ -13,6 +13,7 @@ import { Separator } from "@/components/ui/separator";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { Button } from "@/components/ui/button";
 
+import { useTranslation } from "react-i18next";
 interface GoalPropertiesProps {
   goal: Goal;
   onUpdate?: (data: Record<string, unknown>) => void;
@@ -71,6 +72,7 @@ function PickerButton({
 }
 
 export function GoalProperties({ goal, onUpdate }: GoalPropertiesProps) {
+  const { t } = useTranslation();
   const { selectedCompanyId } = useCompany();
 
   const { data: agents } = useQuery({

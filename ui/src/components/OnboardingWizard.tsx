@@ -33,6 +33,7 @@ import { DEFAULT_GEMINI_LOCAL_MODEL } from "@paperclipai/adapter-gemini-local";
 import { resolveRouteOnboardingOptions } from "../lib/onboarding-route";
 import { AsciiArtAnimation } from "./AsciiArtAnimation";
 import { OpenCodeLogoIcon } from "./OpenCodeLogoIcon";
+import { useTranslation } from "react-i18next";
 import {
   Building2,
   Bot,
@@ -69,6 +70,7 @@ const DEFAULT_TASK_DESCRIPTION = `You are the CEO. You set the direction for the
 - break the roadmap into concrete tasks and start delegating work`;
 
 export function OnboardingWizard() {
+  const { t } = useTranslation();
   const { onboardingOpen, onboardingOptions, closeOnboarding } = useDialog();
   const { companies, setSelectedCompanyId, loading: companiesLoading } = useCompany();
   const queryClient = useQueryClient();

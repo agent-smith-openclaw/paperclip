@@ -13,7 +13,9 @@ import { EmptyState } from "../components/EmptyState";
 import { IssuesList } from "../components/IssuesList";
 import { CircleDot } from "lucide-react";
 
+import { useTranslation } from "react-i18next";
 export function Issues() {
+  const { t } = useTranslation();
   const { selectedCompanyId } = useCompany();
   const { setBreadcrumbs } = useBreadcrumbs();
   const location = useLocation();

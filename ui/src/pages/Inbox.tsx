@@ -52,6 +52,7 @@ import {
 } from "../lib/inbox";
 import { useDismissedInboxItems } from "../hooks/useInboxBadge";
 
+import { useTranslation } from "react-i18next";
 type InboxCategoryFilter =
   | "everything"
   | "issues_i_touched"
@@ -282,6 +283,7 @@ function ApprovalInboxRow({
 }
 
 export function Inbox() {
+  const { t } = useTranslation();
   const { selectedCompanyId } = useCompany();
   const { setBreadcrumbs } = useBreadcrumbs();
   const navigate = useNavigate();

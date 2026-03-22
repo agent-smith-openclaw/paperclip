@@ -18,6 +18,7 @@ import { MarkdownBody } from "../components/MarkdownBody";
 import { cn } from "../lib/utils";
 import { createZipArchive } from "../lib/zip";
 import { getPortableFileDataUrl, getPortableFileText, isPortableImageFile } from "../lib/portable-files";
+import { useTranslation } from "react-i18next";
 import {
   Download,
   Package,
@@ -527,6 +528,7 @@ function expandAncestors(filePath: string): string[] {
 }
 
 export function CompanyExport() {
+  const { t } = useTranslation();
   const { selectedCompanyId, selectedCompany } = useCompany();
   const { setBreadcrumbs } = useBreadcrumbs();
   const { pushToast } = useToast();

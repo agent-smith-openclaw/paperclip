@@ -12,7 +12,9 @@ import { PageSkeleton } from "../components/PageSkeleton";
 import { formatDate } from "../lib/utils";
 import { ListTodo } from "lucide-react";
 
+import { useTranslation } from "react-i18next";
 export function MyIssues() {
+  const { t } = useTranslation();
   const { selectedCompanyId } = useCompany();
   const { setBreadcrumbs } = useBreadcrumbs();
 

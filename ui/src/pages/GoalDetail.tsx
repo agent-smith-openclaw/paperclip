@@ -21,7 +21,9 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Plus } from "lucide-react";
 import type { Goal, Project } from "@paperclipai/shared";
 
+import { useTranslation } from "react-i18next";
 export function GoalDetail() {
+  const { t } = useTranslation();
   const { goalId } = useParams<{ goalId: string }>();
   const { selectedCompanyId, setSelectedCompanyId } = useCompany();
   const { openNewGoal } = useDialog();

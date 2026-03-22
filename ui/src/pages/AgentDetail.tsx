@@ -89,6 +89,7 @@ import {
 } from "@paperclipai/shared";
 import { redactHomePathUserSegments, redactHomePathUserSegmentsInValue } from "@paperclipai/adapter-utils";
 import { agentRouteRef } from "../lib/utils";
+import { useTranslation } from "react-i18next";
 import {
   applyAgentSkillSnapshot,
   arraysEqual,
@@ -514,6 +515,7 @@ function WorkspaceOperationsSection({
 }
 
 export function AgentDetail() {
+  const { t } = useTranslation();
   const { companyPrefix, agentId, tab: urlTab, runId: urlRunId } = useParams<{
     companyPrefix?: string;
     agentId: string;

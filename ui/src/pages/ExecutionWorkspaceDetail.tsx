@@ -4,6 +4,7 @@ import { ExternalLink } from "lucide-react";
 import { executionWorkspacesApi } from "../api/execution-workspaces";
 import { queryKeys } from "../lib/queryKeys";
 
+import { useTranslation } from "react-i18next";
 function isSafeExternalUrl(value: string | null | undefined) {
   if (!value) return false;
   try {
@@ -24,6 +25,7 @@ function DetailRow({ label, children }: { label: string; children: React.ReactNo
 }
 
 export function ExecutionWorkspaceDetail() {
+  const { t } = useTranslation();
   const { workspaceId } = useParams<{ workspaceId: string }>();
 
   const { data: workspace, isLoading, error } = useQuery({

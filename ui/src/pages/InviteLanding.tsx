@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/button";
 import { AGENT_ADAPTER_TYPES } from "@paperclipai/shared";
 import type { AgentAdapterType, JoinRequest } from "@paperclipai/shared";
 
+import { useTranslation } from "react-i18next";
 type JoinType = "human" | "agent";
 const joinAdapterOptions: AgentAdapterType[] = [...AGENT_ADAPTER_TYPES];
 
@@ -39,6 +40,7 @@ function readNestedString(value: unknown, path: string[]): string | null {
 }
 
 export function InviteLandingPage() {
+  const { t } = useTranslation();
   const queryClient = useQueryClient();
   const params = useParams();
   const token = (params.token ?? "").trim();

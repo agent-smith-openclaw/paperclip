@@ -25,6 +25,7 @@ import { Tabs } from "@/components/ui/tabs";
 import { PluginLauncherOutlet } from "@/plugins/launchers";
 import { PluginSlotMount, PluginSlotOutlet, usePluginSlots } from "@/plugins/slots";
 
+import { useTranslation } from "react-i18next";
 /* ── Top-level tab types ── */
 
 type ProjectBaseTab = "overview" | "list" | "configuration" | "budget";
@@ -203,6 +204,7 @@ function ProjectIssuesList({ projectId, companyId }: { projectId: string; compan
 /* ── Main project page ── */
 
 export function ProjectDetail() {
+  const { t } = useTranslation();
   const { companyPrefix, projectId, filter } = useParams<{
     companyPrefix?: string;
     projectId: string;

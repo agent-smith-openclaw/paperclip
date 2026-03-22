@@ -6,7 +6,9 @@ import { authApi } from "../api/auth";
 import { queryKeys } from "../lib/queryKeys";
 import { Button } from "@/components/ui/button";
 
+import { useTranslation } from "react-i18next";
 export function BoardClaimPage() {
+  const { t } = useTranslation();
   const queryClient = useQueryClient();
   const params = useParams();
   const [searchParams] = useSearchParams();

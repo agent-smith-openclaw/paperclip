@@ -19,6 +19,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
+import { useTranslation } from "react-i18next";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -63,6 +64,7 @@ function nextRoutineStatus(currentStatus: string, enabled: boolean) {
 }
 
 export function Routines() {
+  const { t } = useTranslation();
   const { selectedCompanyId } = useCompany();
   const { setBreadcrumbs } = useBreadcrumbs();
   const queryClient = useQueryClient();

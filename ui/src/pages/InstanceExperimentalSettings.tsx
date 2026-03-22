@@ -6,7 +6,9 @@ import { useBreadcrumbs } from "../context/BreadcrumbContext";
 import { queryKeys } from "../lib/queryKeys";
 import { cn } from "../lib/utils";
 
+import { useTranslation } from "react-i18next";
 export function InstanceExperimentalSettings() {
+  const { t } = useTranslation();
   const { setBreadcrumbs } = useBreadcrumbs();
   const queryClient = useQueryClient();
   const [actionError, setActionError] = useState<string | null>(null);

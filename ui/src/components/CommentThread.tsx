@@ -12,6 +12,7 @@ import { AgentIcon } from "./AgentIconPicker";
 import { formatDateTime } from "../lib/utils";
 import { PluginSlotOutlet } from "@/plugins/slots";
 
+import { useTranslation } from "react-i18next";
 interface CommentWithRunMeta extends IssueComment {
   runId?: string | null;
   runAgentId?: string | null;
@@ -271,6 +272,7 @@ export function CommentThread({
   suggestedAssigneeValue,
   mentions: providedMentions,
 }: CommentThreadProps) {
+  const { t } = useTranslation();
   const [body, setBody] = useState("");
   const [reopen, setReopen] = useState(true);
   const [submitting, setSubmitting] = useState(false);

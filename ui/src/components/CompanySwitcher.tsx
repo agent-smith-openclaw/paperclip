@@ -11,6 +11,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Button } from "@/components/ui/button";
 
+import { useTranslation } from "react-i18next";
 function statusDotColor(status?: string): string {
   switch (status) {
     case "active":
@@ -25,6 +26,7 @@ function statusDotColor(status?: string): string {
 }
 
 export function CompanySwitcher() {
+  const { t } = useTranslation();
   const { companies, selectedCompany, setSelectedCompanyId } = useCompany();
   const sidebarCompanies = companies.filter((company) => company.status !== "archived");
 

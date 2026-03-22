@@ -11,6 +11,7 @@ import { PageSkeleton } from "../components/PageSkeleton";
 import { ChevronRight, GitBranch } from "lucide-react";
 import { cn } from "../lib/utils";
 
+import { useTranslation } from "react-i18next";
 function OrgTree({
   nodes,
   depth = 0,
@@ -90,6 +91,7 @@ function OrgTreeNode({
 }
 
 export function Org() {
+  const { t } = useTranslation();
   const { selectedCompanyId } = useCompany();
   const { setBreadcrumbs } = useBreadcrumbs();
 

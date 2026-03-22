@@ -13,6 +13,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { queryKeys } from "../lib/queryKeys";
 import { formatDateTime, relativeTime } from "../lib/utils";
 
+import { useTranslation } from "react-i18next";
 function asRecord(value: unknown): Record<string, unknown> | null {
   if (typeof value !== "object" || value === null || Array.isArray(value)) return null;
   return value as Record<string, unknown>;
@@ -27,6 +28,7 @@ function buildAgentHref(agent: InstanceSchedulerHeartbeatAgent) {
 }
 
 export function InstanceSettings() {
+  const { t } = useTranslation();
   const { setBreadcrumbs } = useBreadcrumbs();
   const queryClient = useQueryClient();
   const [actionError, setActionError] = useState<string | null>(null);

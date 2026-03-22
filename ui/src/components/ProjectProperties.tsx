@@ -19,6 +19,7 @@ import { ChoosePathButton } from "./PathInstructionsModal";
 import { DraftInput } from "./agent-config-primitives";
 import { InlineEditor } from "./InlineEditor";
 
+import { useTranslation } from "react-i18next";
 const PROJECT_STATUSES = [
   { value: "backlog", label: "Backlog" },
   { value: "planned", label: "Planned" },
@@ -216,6 +217,7 @@ function ArchiveDangerZone({
 }
 
 export function ProjectProperties({ project, onUpdate, onFieldUpdate, getFieldSaveState, onArchive, archivePending }: ProjectPropertiesProps) {
+  const { t } = useTranslation();
   const { selectedCompanyId } = useCompany();
   const queryClient = useQueryClient();
   const [goalOpen, setGoalOpen] = useState(false);

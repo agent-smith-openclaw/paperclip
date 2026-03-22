@@ -9,6 +9,7 @@ import { Identity } from "./Identity";
 import { formatDate, agentUrl } from "../lib/utils";
 import { Separator } from "@/components/ui/separator";
 
+import { useTranslation } from "react-i18next";
 interface AgentPropertiesProps {
   agent: Agent;
   runtimeState?: AgentRuntimeState;
@@ -37,6 +38,7 @@ function PropertyRow({ label, children }: { label: string; children: React.React
 }
 
 export function AgentProperties({ agent, runtimeState }: AgentPropertiesProps) {
+  const { t } = useTranslation();
   const { selectedCompanyId } = useCompany();
 
   const { data: agents } = useQuery({

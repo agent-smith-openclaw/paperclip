@@ -10,6 +10,7 @@ import { StatusBadge } from "./StatusBadge";
 import { RunTranscriptView } from "./transcript/RunTranscriptView";
 import { useLiveRunTranscripts } from "./transcript/useLiveRunTranscripts";
 
+import { useTranslation } from "react-i18next";
 interface LiveRunWidgetProps {
   issueId: string;
   companyId?: string | null;
@@ -25,6 +26,7 @@ function isRunActive(status: string): boolean {
 }
 
 export function LiveRunWidget({ issueId, companyId }: LiveRunWidgetProps) {
+  const { t } = useTranslation();
   const queryClient = useQueryClient();
   const [cancellingRunIds, setCancellingRunIds] = useState(new Set<string>());
 

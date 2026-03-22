@@ -28,6 +28,7 @@ import {
 import { DEFAULT_CURSOR_LOCAL_MODEL } from "@paperclipai/adapter-cursor-local";
 import { DEFAULT_GEMINI_LOCAL_MODEL } from "@paperclipai/adapter-gemini-local";
 
+import { useTranslation } from "react-i18next";
 const SUPPORTED_ADVANCED_ADAPTER_TYPES = new Set<CreateConfigValues["adapterType"]>([
   "claude_local",
   "codex_local",
@@ -58,6 +59,7 @@ function createValuesForAdapterType(
 }
 
 export function NewAgent() {
+  const { t } = useTranslation();
   const { selectedCompanyId } = useCompany();
   const { setBreadcrumbs } = useBreadcrumbs();
   const queryClient = useQueryClient();

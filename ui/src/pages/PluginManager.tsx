@@ -30,6 +30,7 @@ import {
 import { useToast } from "@/context/ToastContext";
 import { cn } from "@/lib/utils";
 
+import { useTranslation } from "react-i18next";
 function firstNonEmptyLine(value: string | null | undefined): string | null {
   if (!value) return null;
   const line = value
@@ -61,6 +62,7 @@ function getPluginErrorSummary(plugin: PluginRecord): string {
  * @see doc/plugins/PLUGIN_SPEC.md §3 — Plugin Lifecycle for status semantics.
  */
 export function PluginManager() {
+  const { t } = useTranslation();
   const { selectedCompany } = useCompany();
   const { setBreadcrumbs } = useBreadcrumbs();
   const queryClient = useQueryClient();

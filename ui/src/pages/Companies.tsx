@@ -8,6 +8,7 @@ import { queryKeys } from "../lib/queryKeys";
 import { formatCents, relativeTime } from "../lib/utils";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import { useTranslation } from "react-i18next";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -29,6 +30,7 @@ import {
 } from "lucide-react";
 
 export function Companies() {
+  const { t } = useTranslation();
   const {
     companies,
     selectedCompanyId,

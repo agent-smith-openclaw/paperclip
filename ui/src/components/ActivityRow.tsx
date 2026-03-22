@@ -4,6 +4,7 @@ import { timeAgo } from "../lib/timeAgo";
 import { cn } from "../lib/utils";
 import { deriveProjectUrlKey, type ActivityEvent, type Agent } from "@paperclipai/shared";
 
+import { useTranslation } from "react-i18next";
 const ACTION_VERBS: Record<string, string> = {
   "issue.created": "created",
   "issue.updated": "updated",
@@ -88,6 +89,7 @@ interface ActivityRowProps {
 }
 
 export function ActivityRow({ event, agentMap, entityNameMap, entityTitleMap, className }: ActivityRowProps) {
+  const { t } = useTranslation();
   const verb = formatVerb(event.action, event.details);
 
   const isHeartbeatEvent = event.entityType === "heartbeat_run";

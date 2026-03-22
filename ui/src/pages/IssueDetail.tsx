@@ -55,6 +55,7 @@ import {
 import type { ActivityEvent } from "@paperclipai/shared";
 import type { Agent, IssueAttachment } from "@paperclipai/shared";
 
+import { useTranslation } from "react-i18next";
 type CommentReassignment = {
   assigneeAgentId: string | null;
   assigneeUserId: string | null;
@@ -194,6 +195,7 @@ function ActorIdentity({ evt, agentMap }: { evt: ActivityEvent; agentMap: Map<st
 }
 
 export function IssueDetail() {
+  const { t } = useTranslation();
   const { issueId } = useParams<{ issueId: string }>();
   const { selectedCompanyId } = useCompany();
   const { openPanel, closePanel, panelVisible, setPanelVisible } = usePanel();

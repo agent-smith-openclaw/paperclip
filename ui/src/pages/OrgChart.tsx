@@ -13,6 +13,7 @@ import { AgentIcon } from "../components/AgentIconPicker";
 import { Download, Network, Upload } from "lucide-react";
 import { AGENT_ROLE_LABELS, type Agent } from "@paperclipai/shared";
 
+import { useTranslation } from "react-i18next";
 // Layout constants
 const CARD_W = 200;
 const CARD_H = 100;
@@ -140,6 +141,7 @@ const defaultDotColor = "#a3a3a3";
 // ── Main component ──────────────────────────────────────────────────────
 
 export function OrgChart() {
+  const { t } = useTranslation();
   const { selectedCompanyId } = useCompany();
   const { setBreadcrumbs } = useBreadcrumbs();
   const navigate = useNavigate();

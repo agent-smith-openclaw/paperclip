@@ -10,6 +10,7 @@ import { queryKeys } from "../lib/queryKeys";
 import { Button } from "@/components/ui/button";
 import { Settings, Check, Download, Upload } from "lucide-react";
 import { CompanyPatternIcon } from "../components/CompanyPatternIcon";
+import { useTranslation } from "react-i18next";
 import {
   Field,
   ToggleField,
@@ -23,6 +24,7 @@ type AgentSnippetInput = {
 };
 
 export function CompanySettings() {
+  const { t } = useTranslation();
   const {
     companies,
     selectedCompany,
