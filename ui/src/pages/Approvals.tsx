@@ -10,12 +10,14 @@ import { cn } from "../lib/utils";
 import { PageTabBar } from "../components/PageTabBar";
 import { Tabs } from "@/components/ui/tabs";
 import { ShieldCheck } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import { ApprovalCard } from "../components/ApprovalCard";
 import { PageSkeleton } from "../components/PageSkeleton";
 
 type StatusFilter = "pending" | "all";
 
 export function Approvals() {
+  const { t } = useTranslation();
   const { selectedCompanyId } = useCompany();
   const { setBreadcrumbs } = useBreadcrumbs();
   const queryClient = useQueryClient();
@@ -75,7 +77,7 @@ export function Approvals() {
   ).length;
 
   if (!selectedCompanyId) {
-    return <p className="text-sm text-muted-foreground">Select a company first.</p>;
+    return <p className="text-sm text-muted-foreground">{t("approvals.selectCompanyFirst")}</p>;
   }
 
   if (isLoading) {
@@ -107,7 +109,7 @@ export function Approvals() {
         <div className="flex flex-col items-center justify-center py-16 text-center">
           <ShieldCheck className="h-8 w-8 text-muted-foreground/30 mb-3" />
           <p className="text-sm text-muted-foreground">
-            {statusFilter === "pending" ? "No pending approvals." : "No approvals yet."}
+            {statusFilter === "pending" ? t("approvals.noPendingApprovals") : t("approvals.noApprovalsYet")}
           </p>
         </div>
       )}

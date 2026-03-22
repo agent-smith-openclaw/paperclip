@@ -19,9 +19,11 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { History } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import type { Agent } from "@paperclipai/shared";
 
 export function Activity() {
+  const { t } = useTranslation();
   const { selectedCompanyId } = useCompany();
   const { setBreadcrumbs } = useBreadcrumbs();
   const [filter, setFilter] = useState("all");
@@ -82,7 +84,7 @@ export function Activity() {
   }, [issues]);
 
   if (!selectedCompanyId) {
-    return <EmptyState icon={History} message="Select a company to view activity." />;
+    return <EmptyState icon={History} message={t("activity.selectCompanyMessage")} />;
   }
 
   if (isLoading) {
@@ -106,7 +108,7 @@ export function Activity() {
             <SelectValue placeholder="Filter by type" />
           </SelectTrigger>
           <SelectContent>
-            <SelectItem value="all">All types</SelectItem>
+            <SelectItem value="all">{t("activity.allTypes")}</SelectItem>
             {entityTypes.map((type) => (
               <SelectItem key={type} value={type}>
                 {type.charAt(0).toUpperCase() + type.slice(1)}
@@ -119,7 +121,7 @@ export function Activity() {
       {error && <p className="text-sm text-destructive">{error.message}</p>}
 
       {filtered && filtered.length === 0 && (
-        <EmptyState icon={History} message="No activity yet." />
+        <EmptyState icon={History} message={t("activity.noActivityYet")} />
       )}
 
       {filtered && filtered.length > 0 && (
