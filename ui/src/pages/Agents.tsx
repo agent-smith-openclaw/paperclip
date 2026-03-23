@@ -136,10 +136,10 @@ export function Agents() {
         <Tabs value={tab} onValueChange={(v) => navigate(`/agents/${v}`)}>
           <PageTabBar
             items={[
-              { value: "all", label: "All" },
-              { value: "active", label: "Active" },
-              { value: "paused", label: "Paused" },
-              { value: "error", label: "Error" },
+              { value: "all", label: t("common.all") },
+              { value: "active", label: t("common.active") },
+              { value: "paused", label: t("common.paused") },
+              { value: "error", label: t("common.error") },
             ]}
             value={tab}
             onValueChange={(v) => navigate(`/agents/${v}`)}
