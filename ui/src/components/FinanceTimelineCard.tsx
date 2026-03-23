@@ -8,6 +8,7 @@ import {
   formatDateTime,
   providerDisplayName,
 } from "@/lib/utils";
+import { useTranslation } from "react-i18next";
 
 interface FinanceTimelineCardProps {
   rows: FinanceEvent[];
@@ -16,17 +17,19 @@ interface FinanceTimelineCardProps {
 
 export function FinanceTimelineCard({
   rows,
-  emptyMessage = "No financial events in this period.",
+  emptyMessage,
 }: FinanceTimelineCardProps) {
+  const { t } = useTranslation();
+  const resolvedEmptyMessage = emptyMessage ?? t("costs.noFinancialEvents");
   return (
     <Card>
       <CardHeader className="px-4 pt-4 pb-1">
-        <CardTitle className="text-base">Recent financial events</CardTitle>
-        <CardDescription>Top-ups, fees, credits, commitments, and other non-request charges.</CardDescription>
+        <CardTitle className="text-base">{t("costs.recentFinancialEvents")}</CardTitle>
+        <CardDescription>{t("costs.recentFinancialEventsDesc")}</CardDescription>
       </CardHeader>
       <CardContent className="space-y-3 px-4 pb-4 pt-3">
         {rows.length === 0 ? (
-          <p className="text-sm text-muted-foreground">{emptyMessage}</p>
+          <p className="text-sm text-muted-foreground">{resolvedEmptyMessage}</p>
         ) : (
           rows.map((row) => (
             <div
