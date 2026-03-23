@@ -56,13 +56,19 @@
     "configuration": "Configuration",
     "budget": "Budget",
     "copy": "Copy",
-    "copied": "Copied!",
+    "copied": "Copied",
     "pending": "Pending",
     "running": "Running",
     "terminated": "Terminated",
     "succeeded": "Succeeded",
     "failed": "Failed",
-    "beta": "Beta"
+    "beta": "Beta",
+    "saving": "Saving...",
+    "saveChanges": "Save changes",
+    "failedToSave": "Failed to save",
+    "generating": "Generating...",
+    "export": "Export",
+    "import": "Import"
   },
   "nav": {
     "dashboard": "Dashboard",
@@ -82,7 +88,8 @@
     "plugins": "Plugins",
     "work": "Work",
     "company": "Company",
-    "newIssue": "New Issue"
+    "newIssue": "New Issue",
+    "documentation": "Documentation"
   },
   "dashboard": {
     "title": "Dashboard",
@@ -537,7 +544,23 @@
     "archiveCompanyBtn": "Archive company",
     "archiving": "Archiving...",
     "alreadyArchived": "Already archived",
-    "noCompanySelected": "No company selected. Select a company from the switcher above."
+    "noCompanySelected": "No company selected. Select a company from the switcher above.",
+    "company": "Company",
+    "noCompany": "No company selected. Select a company from the switcher above.",
+    "companyNameHint": "The display name for your company.",
+    "descriptionHint": "Optional description shown in the company profile.",
+    "descriptionPlaceholder": "Optional company description",
+    "logo": "Logo",
+    "logoHint": "Upload a PNG, JPEG, WEBP, GIF, or SVG logo image.",
+    "removing": "Removing...",
+    "removeLogo": "Remove logo",
+    "logoUploadFailed": "Logo upload failed",
+    "uploadingLogo": "Uploading logo...",
+    "brandColorHint": "Sets the hue for the company icon. Leave empty for auto-generated color.",
+    "inviteDesc": "Generate an OpenClaw agent invite snippet.",
+    "copySnippet": "Copy snippet",
+    "importExportMoved": "Import and export have moved to dedicated pages accessible from the",
+    "archiveDesc": "Archive this company to hide it from the sidebar. This persists in the database."
   },
   "instanceSettings": {
     "title": "Instance Settings",
